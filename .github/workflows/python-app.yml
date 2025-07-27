@@ -10,7 +10,7 @@ on:
             - main
 
 jobs:
-    tests:
+    test:
         runs-on: ubuntu-latest # container there is some other containers like windows, mac-os. you can use what you want
          
         steps:
