@@ -28,7 +28,7 @@ jobs:
           pytest
 
       - name: Deploy to Railway
-        uses: railwayapp/railway-action@v1
+        uses: railwayapp/railway-action@v2
         with:
           railwayToken: ${{ secrets.b0d2ad7c-894f-49a6-96ec-cdfeaa4dcac4 }}
           
