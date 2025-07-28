@@ -1,4 +1,4 @@
-name: Python CI
+name: Python CI and Deploy
 
 on:
   push:
@@ -7,9 +7,8 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
+  test-and-deploy:
     runs-on: ubuntu-latest
-
     container:
       image: python:3.10-slim
 
@@ -28,3 +27,8 @@ jobs:
           export PYTHONPATH=$PYTHONPATH:$(pwd)
           pytest
 
+      - name: Deploy to Railway
+        uses: railwayapp/railway-action@v1
+        with:
+          railwayToken: ${{ secrets.b0d2ad7c-894f-49a6-96ec-cdfeaa4dcac4 }}
+          
